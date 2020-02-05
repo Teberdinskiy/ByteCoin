@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9843AA7123EA9F48009F9367 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843AA7023EA9F48009F9367 /* CoinData.swift */; };
+		9843AA7323EAA107009F9367 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843AA7223EAA107009F9367 /* CoinModel.swift */; };
 		9857619A23E808080054850F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9857619923E808080054850F /* AppDelegate.swift */; };
 		9857619C23E808080054850F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9857619B23E808080054850F /* SceneDelegate.swift */; };
 		9857619E23E808080054850F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9857619D23E808080054850F /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9843AA7023EA9F48009F9367 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
+		9843AA7223EAA107009F9367 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		9857619623E808080054850F /* ByteCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ByteCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9857619923E808080054850F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9857619B23E808080054850F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				985761AF23E808DB0054850F /* CoinManager.swift */,
+				9843AA7223EAA107009F9367 /* CoinModel.swift */,
+				9843AA7023EA9F48009F9367 /* CoinData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,7 +173,9 @@
 			files = (
 				985761B023E808DB0054850F /* CoinManager.swift in Sources */,
 				9857619E23E808080054850F /* ViewController.swift in Sources */,
+				9843AA7123EA9F48009F9367 /* CoinData.swift in Sources */,
 				9857619A23E808080054850F /* AppDelegate.swift in Sources */,
+				9843AA7323EAA107009F9367 /* CoinModel.swift in Sources */,
 				9857619C23E808080054850F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
