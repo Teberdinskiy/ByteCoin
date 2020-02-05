@@ -9,5 +9,5 @@
 import UIKit
 
 struct CoinData: Decodable {
-    let last: Double
+    let rate: Double
 }

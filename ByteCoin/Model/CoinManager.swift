@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol CoinManagerDelegate {
+    func didUpdatePrice(price: String, currency: String)
+    func didFailWithError(error: Error)
+}
+
 struct CoinManager {
+    
+    var delegate: CoinManagerDelegate?
     
     let baseURL = "https://rest.coinapi.io/v1/exchangerate/BTC"
     let apiKey = "E581F91E-4DB5-47C5-AA1D-24E7B7163359"
@@ -29,11 +36,14 @@ struct CoinManager {
             //Create a new data task for the URLSession
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    print(error)
+                    self.delegate?.didFailWithError(error: error!)
                     return
                 }
                 if let safeData = data {
-                    let bitcoinPrice = self.parseJSON(safeData)
+                    if let bitcoinPrice = self.parseJSON(safeData) {
+                        let priceString = String(format: "%.2f", bitcoinPrice)
+                        self.delegate?.didUpdatePrice(price: priceString, currency: currency)
+                    }
                 }
             }
             //Start task
@@ -48,13 +58,17 @@ struct CoinManager {
         do {
             let decoderData = try decoder.decode(CoinData.self, from: data)
             
-            let lastPrice = decoderData.last
+            let lastPrice = decoderData.rate
+            
             print(lastPrice)
             return lastPrice
             
         } catch {
-            print(error)
+            delegate?.didFailWithError(error: error)
             return nil
         }
     }
 }
+
+
+
